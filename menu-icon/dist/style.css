@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+  width: 40rem;
+  background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
+  border-radius: 0.5rem;
+}
+.frame::before {
+  position: absolute;
+  content: "MENU BUTTON";
+  text-align: center;
+  color: #fff;
+  top: 2rem;
+  width: 100%;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  z-index: 10;
+  text-shadow: 0 0 0.3rem #000;
+}
+.frame::after {
+  position: absolute;
+  content: "";
+  height: 30rem;
+  width: 30rem;
+  background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
+  border: 0.2rem solid rgb(192, 192, 192);
+  box-shadow: -0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), 0.2rem -0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.wrapper {
+  position: relative;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.line1,
+.line2,
+.line3 {
+  width: 12rem;
+  height: 1rem;
+  background: rgb(219, 219, 219);
+  transition: 0.3s;
+  margin: 1.5rem 0;
+  border-radius: 3rem;
+}
+
+.active .line1 {
+  transform: rotate(-405deg) translate(-2rem, 1rem);
+}
+
+.active .line2 {
+  opacity: 0;
+}
+
+.active .line3 {
+  transform: rotate(405deg) translate(-2rem, -2rem);
+}
+
+/*# sourceMappingURL=style.css.map */
